@@ -5,7 +5,7 @@ import InputData from "../Input";
 import AddTodo from "../AddTodo";
 import {Context} from "../../context";
 
-const App = () => {
+const Todo = () => {
     const [todo, setTodo] = useState([])
     const [value, setValue] = useState('')
 
@@ -49,4 +49,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default Todo;
