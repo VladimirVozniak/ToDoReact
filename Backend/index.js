@@ -19,9 +19,17 @@ try {
     mongoose.connect(
         'mongodb+srv://' + USER + ':' + PASS + '@cluster0.4oc1c.mongodb.net/myFirstDatabase',
     )
-    app.listen(PORT, () => {
+    
+    const server = app.listen(PORT, () => {
         console.log("Сервер был подключен...")
     })
+
+    setTimeout(() => server.close(() => {
+        mongoose.connection.close(false, () => {
+            console.log('Сервер закрыт');
+            process.exit(0);
+        });
+    }), 5000)
 } catch (err) {
     console.log(err)
 }
