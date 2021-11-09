@@ -1,26 +1,37 @@
 const Task = require('../models/Todo')
 
 module.exports.getTodos = async (req, res) => {
-    await Task.find().then(result => {
-        res.send({data: result})
-    }).catch(err => res.send(err))
+    try {
+        const allTodos = await Task.find()
+        res.send({data: allTodos})
+    } catch (e) {
+        res.send(e)
+    }
 };
 
 module.exports.createNewTodo = async (req, res) => {
-    const task = new Task(req.body)
-    await task.save().then(result => {
+    try {
+        const newTask = new Task(req.body)
+        const result = await newTask.save()
         res.send({data: result})
-    }).catch(err => res.send(err))
+    } catch (e) {
+        res.send(e)
+    }
 };
 
 module.exports.changeTodoInfo = async (req, res) => {
-   await Task.findOneAndUpdate({_id: req.query.id}, req.body).then(() => {
-        res.send({data: "id: " + req.query.id + " deleted"})
-    }).catch(err => res.send(err))
+    try {
+        await Task.findOneAndUpdate({_id: req.query.id}, req.body)
+    } catch (e) {
+        res.send(e)
+    }
 };
 
 module.exports.deleteTodo = async (req, res) => {
-    await Task.deleteOne({_id: req.query.id}).then(() => {
+    try {
+        await Task.deleteOne({_id: req.query.id})
         res.send({data: "id: " + req.query.id + " deleted"})
-    }).catch(err => res.send(err))
+    } catch (e) {
+        res.send(e)
+    }
 };
