@@ -1,0 +1,15 @@
+.add-task {
+    padding: 8px 12px;
+    background-color: #839bfd;
+    border: none;
+    border-radius: 4px;
+    height: 34px;
+    margin-left: 10px;
+    font-size: 20px;
+    line-height: 5px;
+}
+
+.add-task:hover {
+    color: white;
+    cursor: pointer;
+}
