@@ -20,7 +20,7 @@ module.exports.createNewTodo = async (req, res) => {
         await Task.create({
             value: req.body.value,
             isChecked: false,
-            user: id
+            user_id: id
         }, (e, newTask) => {
             if (e) return e
             res.send({data: newTask})
