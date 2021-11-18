@@ -14,7 +14,7 @@ const todoSlice = createSlice({
             state.todo = action.payload
         },
         add(state, action) {
-            state.todo.push({value: action.payload, isChecked: false})
+            state.todo.push({...action.payload})
         },
         edit(state, action) {
             state.todo = state.todo.map(elem => elem._id === action.payload[0] ? {
