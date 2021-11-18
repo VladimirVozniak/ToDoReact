@@ -24,12 +24,12 @@ try {
         console.log('Сервер был подключен')
     })
 
-    // setTimeout(() => server.close(() => {
-    //     mongoose.connection.close(false, () => {
-    //         console.log('Сервер отключен');
-    //         process.exit(0);
-    //     });
-    // }), 15000)
+    setTimeout(() => server.close(() => {
+        mongoose.connection.close(false, () => {
+            console.log('Сервер отключен');
+            process.exit(0);
+        });
+    }), 60000)
 } catch (err) {
     console.log(err)
 }
