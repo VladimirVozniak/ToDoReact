@@ -5,7 +5,6 @@ import AddTodo from "../AddTodo";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-// import {currentUser} from "../../Redux/todoSlice";
 import {getAllTodo} from '../../API/Todo/getAllTodo'
 
 const Todo = () => {
@@ -15,7 +14,7 @@ const Todo = () => {
 
     useEffect(() => {
         dispatch(getAllTodo())
-    },[dispatch])
+    },[todoList.length])
 
     return (
         <div className='container'>
