@@ -6,7 +6,7 @@ module.exports.getTodos = async (req, res) => {
     try {
         const token = req.headers.authorization
         const id = jwt.verify(token, secret).id
-        const allTodos = await Task.find({user: id})
+        const allTodos = await Task.find({user_id: id})
         res.send({data: allTodos})
     } catch (e) {
         res.send(e)
