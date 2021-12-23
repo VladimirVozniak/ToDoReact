@@ -1,0 +1,44 @@
+.input-box {
+    margin: 8px 0;
+}
+
+.data-input_login {
+    box-sizing: border-box;
+    outline: none;
+    background-color: #ebebeb;
+    border-radius: 4px;
+    border: none;
+    width: 210px;
+    height: 30px;
+    font-size: 18px;
+    padding: 1px 10px;
+}
+
+.password-box {
+    display: flex;
+    align-items: center;
+    background: #ebebeb;
+    border-radius: 4px;
+}
+
+.password-input {
+    width: 100%;
+}
+
+.eye-password {
+    height: 23px;
+    margin: 2px 5px 0 0;
+    filter: opacity(0.25);
+}
+
+.eye-password:hover {
+    filter: opacity(0.4);
+}
+
+.show-password {
+    filter: opacity(1)
+}
+
+.show-password:hover {
+    filter: opacity(0.7)
+}
